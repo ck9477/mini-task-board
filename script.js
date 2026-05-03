@@ -1,22 +1,24 @@
 
 function updateCounter() {
-    const count = document.querySelectorAll("li").length;
+    const count = document.querySelectorAll("#taskList li").length;
     document.getElementById("design").innerText = "Tasks: " + count;
 }
-import React, { useState } from 'react';
 
-function TodoApp() {
-  // מצב לרשימת המשימות
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState('');
+function addTask() {
+    const input = document.getElementById("taskInput");
+    const task = input.value.trim();
+    if(task) {
+        const li = document.createElement("li");
+        li.textContent = task;
 
-  // פונקציה להוספת משימה
-  const addTask = () => {
-    if (newTask.trim()) {
-      setTasks([...tasks, newTask]);
-      setNewTask(''); // ניקוי השדה אחרי הוספה
-    }
-  };
+        // כפתור מחיקה
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "✖";
+        deleteBtn.onclick = (e) => {
+            e.stopPropagation(); // למניעת אירועים אחרים
+            li.remove();
+            updateCounter();
+        };
 
   return (
     <div>
@@ -37,5 +39,11 @@ function TodoApp() {
     </div>
   );
 }
+        li.appendChild(deleteBtn);
+        document.getElementById("taskList").appendChild(li);
 
-export default TodoApp;
+        input.value = ""; // ניקוי השדה
+        updateCounter();
+    }
+}
+function f(){}
