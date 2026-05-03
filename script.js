@@ -26,3 +26,4 @@ function addTask() {
         updateCounter();
     }
 }
+function f(){}
