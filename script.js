@@ -1,3 +1,4 @@
+
 function updateCounter() {
     const count = document.querySelectorAll("li").length;
     document.getElementById("design").innerText = "Tasks: " + count;
@@ -26,7 +27,7 @@ function TodoApp() {
         onChange={(e) => setNewTask(e.target.value)} // עדכון של state
         placeholder="הוסף משימה"
       />
-      <button onClick={addTask}>הוסף</button>
+      <button onClick={addTask} disabled={!newTask.trim()}>הוסף</button>
       
       <ul>
         {tasks.map((task, index) => (
