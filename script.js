@@ -39,7 +39,7 @@ function addTask() {
     </div>
   );
 }
-        li.appendChild(deleteBtn);
+li.appendChild(deleteBtn);
         document.getElementById("taskList").appendChild(li);
 
         input.value = ""; // ניקוי השדה
