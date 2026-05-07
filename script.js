@@ -19,7 +19,6 @@ function addTask() {
             li.remove();
             updateCounter();
         };
-
   return (
     <div>
       <h1>רשימת משימות</h1>
