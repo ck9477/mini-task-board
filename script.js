@@ -12,14 +12,13 @@ function addTask() {
         li.textContent = task;
 
         // כפתור מחיקה
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "✖";
-        deleteBtn.onclick = (e) => {
+        const deleteBtn1 = document.createElement("button");
+        deleteBtn1.textContent = "✖";
+        deleteBtn1.onclick = (e) => {
             e.stopPropagation(); // למניעת אירועים אחרים
             li.remove();
             updateCounter();
         };
-
   return (
     <div>
       <h1>רשימת משימות</h1>
@@ -39,7 +38,7 @@ function addTask() {
     </div>
   );
 }
-li.appendChild(deleteBtn);
+li.appendChild(deleteBtn1);
         document.getElementById("taskList").appendChild(li);
 
         input.value = ""; // ניקוי השדה
